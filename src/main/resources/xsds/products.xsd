@@ -1,0 +1,25 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://www.abans.com/products-ws"
+           targetNamespace="http://www.abans.com/products-ws" elementFormDefault="qualified">
+
+    <xs:complexType name="product">
+        <xs:sequence>
+            <xs:element name="name" type="xs:string"/>
+            <xs:element name="price" type="xs:string"/>
+            <xs:element name="image" type="xs:string"/>
+            <xs:element name="description" type="xs:string"/>
+            <xs:element name="category" type="xs:string"/>
+            <xs:element name="brand" type="xs:string"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:element name="getAllProductsRequest">
+        <xs:complexType/>
+    </xs:element>    
+    <xs:element name="getAllProductsResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="product" type="tns:product" maxOccurs="unbounded"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>   
+
+</xs:schema>
